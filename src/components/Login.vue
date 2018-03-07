@@ -45,7 +45,7 @@ export default {
     
   },
   methods:{
-    judegAccount(){
+    judegAccount(){//检测用户名和角色是否匹配
       if(this.form.name==""){
         return;
       }
@@ -64,29 +64,33 @@ export default {
         this.form.name = '';
       }
     },
-    resetForm(formName) {
+    resetForm(formName) {//重置
       this.$refs[formName].resetFields();
     },
-    submitForm(){
+    submitForm(){//点击登陆验证用户名和密码
+      if(this.form.name==""||this.form.password==""){
+        this.showText('请输入用户名和密码');
+        return;
+      }
       let accountArr = [];
       var type = "";
       switch(this.form.radio){
-          case "1":accountArr=this.$store.state.adminAccount;type="admin";break;
-          case "2":accountArr=this.$store.state.shopAccount;type="shop";break;
-          default:accountArr=this.$store.state.buyerAccount;type="buyer";
+        case "1":accountArr=this.$store.state.adminAccount;type="admin";break;
+        case "2":accountArr=this.$store.state.shopAccount;type="shop";break;
+        default:accountArr=this.$store.state.buyerAccount;type="buyer";
       }
       for(var i=0,arrLength=accountArr.length;i<arrLength;i++){
-          if(this.form.name==accountArr[i].name&&this.form.password!=accountArr[i].password){
-            this.showText('密码输入错误，请重新输入');
-            this.form.password = '';
-            return;
-          }else if(this.form.name==accountArr[i].name&&this.form.password==accountArr[i].password){
-            this.$store.commit('login',{userMess:accountArr[i].mess,loginState:this.form.radio})
-            this.$router.push({path:`/${type}`});
-          }
+        if(this.form.name==accountArr[i].name&&this.form.password!=accountArr[i].password){
+          this.showText('密码输入错误，请重新输入');
+          this.form.password = '';
+          return;
+        }else if(this.form.name==accountArr[i].name&&this.form.password==accountArr[i].password){
+          this.$store.commit('login',{userMess:accountArr[i].mess,loginState:this.form.radio})
+          this.$router.push({path:`/${type}`});
+        }
       }
     },
-    showText(mess){
+    showText(mess){//错误提示
       this.$alert(mess, '错了哦', {
         confirmButtonText: '确定'
       });
