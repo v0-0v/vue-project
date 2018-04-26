@@ -5,9 +5,15 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import Api from "./api/config.js"
 import store from './store/store.js'
+import axios from 'axios'
+require('./mock/index.js')//此部分引入的是我们所编写的mockjs文档
 
 Vue.config.productionTip = false
+
+Vue.prototype.Api=Api;
+Vue.prototype.axios = axios;
 
 /* eslint-disable no-new */
 Vue.use(ElementUI)
