@@ -8,6 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Api from "./api/config.js"
 import store from './store/store.js'
 import axios from 'axios'
+import './assets/css/base.css'
 require('./mock/index.js')//此部分引入的是我们所编写的mockjs文档
 
 Vue.config.productionTip = false
