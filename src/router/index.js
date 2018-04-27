@@ -19,7 +19,21 @@ export default new Router({
     },
     {
     	path: '/admin',
-    	component: Admin
+    	component: Admin,
+      children: [
+        {
+          path:'index',
+          component: function(resolve){
+            require(['../view/admin/Index.vue'], resolve)
+          }
+        },
+        {
+          path:'shop',
+          component: function(resolve){
+            require(['../view/admin/Shop.vue'], resolve)
+          }
+        },
+      ]
     },
     {
     	path: '/shop',

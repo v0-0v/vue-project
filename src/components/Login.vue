@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="login-wrap">
     <h1>{{ msg }}</h1>
     <h2>请先登陆您的身份</h2>
-    <div class="hello">
+    <div class="form-wrap">
       <el-form ref="form" :model="form" label-width="80px" :label-position="labelPosition">
         <el-form-item label="角色" prop="radio">
           <el-radio-group v-model="form.radio" v-on:change="judegAccount">
@@ -75,8 +75,9 @@ export default {
             type: 'success',
             message: '登陆成功!'
           });
+          this.$store.commit('login',{userMess:res.data.mess});
           if(this.form.radio=='0'){
-            this.$router.push({path: '/admin'});
+            this.$router.push({path: '/admin/index'});
           }else if(this.form.radio=='1'){
             this.$router.push({path: '/shop'});
           }else{
@@ -101,9 +102,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.login-wrap{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
 h1, h2 {
   font-weight: normal;
   text-align: center;
+}
+h1{
+  font-size: 30px;
+  margin: 40px auto 20px;
+}
+h2{
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 ul {
   list-style-type: none;
@@ -116,7 +130,7 @@ li {
 a {
   color: #42b983;
 }
-.hello{
+.form-wrap{
   width: 286px;
   margin: 0 auto;
   text-align: left;

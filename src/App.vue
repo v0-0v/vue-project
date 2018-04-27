@@ -24,5 +24,6 @@ html,body{
   min-width: 570px;
   margin: 0 auto;
   height: 100%;
+  background-color: #eaebf0;
 }
 </style>
