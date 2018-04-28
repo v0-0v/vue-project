@@ -43,7 +43,27 @@ export default new Router({
     },
     {
     	path: '/shop',
-    	component: Shop
+    	component: Shop,
+      children: [
+        {
+          path:'index',
+          component: function(resolve){
+            require(['../view/shop/Index.vue'], resolve)
+          }
+        },
+        {
+          path:'goodList',
+          component: function(resolve){
+            require(['../view/shop/GoodList.vue'], resolve)
+          }
+        },
+        {
+          path:'good/:id',
+          component: function(resolve){
+            require(['../view/shop/Good.vue'], resolve)
+          }
+        },
+      ]
     },
     {
     	path: '/buyer',

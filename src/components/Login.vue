@@ -79,9 +79,9 @@ export default {
           if(this.form.radio=='0'){
             this.$router.push({path: '/admin/index'});
           }else if(this.form.radio=='1'){
-            this.$router.push({path: '/shop'});
+            this.$router.push({path: '/shop/index'});
           }else{
-            this.$router.push({path: '/buyer'});
+            this.$router.push({path: '/buyer/index'});
           }
         }else{
           this.showText('密码输入错误，请重新输入');

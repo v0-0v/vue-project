@@ -7,7 +7,24 @@ var accountInfo=[//账号列表
   	{"name":"admin3","password":"123","mess":{"userName":"附近的金毛","loginId":"admin3","password":"123"}},
   ],
   [//商家账号
-  	{"name":"shop1","password":"123","mess":{"id":1,"userName":"张兴邦食品旗舰店","loginId":"shop1","password":"123","label":"食品"}},
+  	{"name":"shop1","password":"123","mess":{"id":1,"userName":"张兴邦食品旗舰店","loginId":"shop1","password":"123","label":"食品"},
+  	"goodList":[
+  		{
+  			"id":"1",
+  			"coverImg":"../../../static/images/shop/coverImg1.jpg",//封面图片路径
+  			"title":"零食大礼包",
+  			"produce":"超多零食，送女友，超大一箱，多种类自选，小吃组合，散装混合批发，超级划算，性价比高，良心推荐，加量不加价",
+  			"price":"￥23.5",
+  			"exampleImg":"",//示例图片路径
+  			"tags":[//个性化元素列表
+  				{
+  					"type":"",
+  					"list":[""]
+  				}
+  			]
+  		},
+  	]
+  },
   	{"name":"shop2","password":"123","mess":{"id":2,"userName":"自油自画旗舰店","loginId":"shop2","password":"123","label":"艺术"}},
   	{"name":"shop3","password":"123","mess":{"id":3,"userName":"帕霏原创女装","loginId":"shop3","password":"123","label":"服装"}},
   ],
@@ -56,6 +73,7 @@ Mock.mock('http://www.Zhengy.com/api/getAccountList',function(options){
 Mock.mock('http://www.Zhengy.com/api/adminHandle',function(options){
 	var req = eval('('+options.body+')');
 	var code = 201;
+	var afterEdit = {};
 	switch(req.handle){
 		case "1"://添加账号
 			if(req.type==1){//商家账号
@@ -114,6 +132,7 @@ Mock.mock('http://www.Zhengy.com/api/adminHandle',function(options){
 				}
 				code=200;
 			}
+			afterEdit=accountInfo[req.type][index];
 			break;
 		default://删除账号
 			var index=accountInfo[req.type].findIndex((value,index,arr)=>{
@@ -122,6 +141,28 @@ Mock.mock('http://www.Zhengy.com/api/adminHandle',function(options){
 			accountInfo[req.type].splice(index,1);
 			code=200;
 	}
-	return {"code":code};
+	return {"code":code,"afterEdit":afterEdit};
 })
 
+//商家页面
+//商家获取已上架商品列表
+Mock.mock('http://www.Zhengy.com/api/getGoodList',function(options){
+	var req = eval('('+options.body+')');
+	var index = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.id;
+	})
+	var res = accountInfo[1][index].goodList;
+	return res;
+})
+//商家获取某商品详细信息
+Mock.mock('http://www.Zhengy.com/api/getGoodMess',function(options){
+	var req = eval('('+options.body+')');
+	var index1 = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.shopId;
+	})
+	var index2 = accountInfo[1][index1].goodList.findIndex((value,index,arr)=>{
+		return value.id==req.goodId;
+	})
+	var res = accountInfo[1][index1].goodList[index2];
+	return res;
+})
