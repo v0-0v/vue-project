@@ -46,6 +46,15 @@
 		      </template>
 		    </el-table-column>
 		  </el-table>
+		  <div class="pageblock">
+	      <el-pagination
+	        layout="prev, pager, next"
+	        :page-size="pageSize"
+	        :current-page.sync="currentPage"
+	        :total="total"
+	        @current-change="pagechange">
+	      </el-pagination>
+	    </div>
 		</div>
 		<el-dialog :title="dialogTitle" :visible.sync="dialogTableVisible" :show-close="false">
       <div class="dialogheader">
@@ -89,7 +98,10 @@
 					name:"",
 					password:"",
 					address:""
-				}
+				},
+				total:0,
+	      currentPage:1,
+	      pageSize:10,
 			}
 		},
 		mounted(){
@@ -100,7 +112,13 @@
 				this.axios.post(this.Api.getAccountList,{
 	        type:2
 	      }).then((res)=>{
-	      	this.buyerInfo=res.data;
+	      	this.buyerInfo=[];
+          for(let i=(this.currentPage-1)*10;i<this.currentPage*10;i++){
+            if(res.data.length-1>=i){
+              this.buyerInfo.push(res.data[i])
+            }
+          }
+          this.total=parseInt(res.data.length);
 	      }).catch((err)=>{
 	        console.log("getShopList:"+err);
 	      });
@@ -238,6 +256,10 @@
 	        });          
 	      })
       },
+      pagechange(val){
+	      this.currentPage=val;
+	      this.getShopList();
+	    },
 		}
 	}
 </script>
@@ -292,6 +314,10 @@
 	.has-gutter th{
 		color: #17905c;
 		padding: 0 4px;
+	}
+	.pageblock{
+		margin-top: 20px;
+		text-align: right;
 	}
 </style>
 
@@ -408,5 +434,45 @@
   .el-message-box .el-message-box__btns .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
+  }
+
+  .el-pagination{
+  	font-weight: normal;
+  	padding-right: 0;
+  }
+  .el-pagination button{
+  	padding: 0 6px;
+  	min-width: 28px;
+  }
+  .el-pagination .btn-next, .el-pagination .btn-prev{
+  	border: 1px solid #d1dbe5;
+  }
+  .el-pagination .btn-prev{
+  	padding-right: 6px;
+  	border-right: 0;
+  	border-radius: 2px 0 0 2px;
+  }
+  .el-pagination .btn-next{
+  	border-left: 0;
+  	padding-left: 6px;
+  	border-radius: 0 2px 2px 0;
+  }
+  .el-pager li{
+  	border: 1px solid #d1dbe5;
+  	border-right: 0;
+  	min-width: 28px;
+  }
+  .el-pager li.active{
+  	color: #fff;
+  }
+  .pageblock .el-pager li.active{
+  	border-color: #3eb983;
+  	background-color: #3eb983;
+  }
+  .el-pager li.active+li{
+  	border-left: 0;
+  }
+  .el-pager li:last-child{
+  	border-right: 1px solid #d1dbe5;
   }
 </style>

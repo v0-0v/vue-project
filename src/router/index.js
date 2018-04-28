@@ -41,18 +41,6 @@ export default new Router({
         },
       ]
     },
-    // {
-    //   path: '/admin/index',
-    //   component: function(resolve){
-    //     require(['../view/admin/Index.vue'], resolve)
-    //   }
-    // },
-    // {
-    //   path: '/admin/shop',
-    //   component: function(resolve){
-    //     require(['../view/admin/Shop.vue'], resolve)
-    //   }
-    // },
     {
     	path: '/shop',
     	component: Shop
