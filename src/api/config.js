@@ -5,4 +5,5 @@ export default{
 	login:api+"/login",//登陆
 	getTagtList:api+"/getTagtList",//获取商家标签列表
 	getAccountList:api+"/getAccountList",//管理员获取账号列表
+	adminHandle:api+"/adminHandle",//管理员的增删改查操作
 }

@@ -33,8 +33,26 @@ export default new Router({
             require(['../view/admin/Shop.vue'], resolve)
           }
         },
+        {
+          path:'buyer',
+          component: function(resolve){
+            require(['../view/admin/Buyer.vue'], resolve)
+          }
+        },
       ]
     },
+    // {
+    //   path: '/admin/index',
+    //   component: function(resolve){
+    //     require(['../view/admin/Index.vue'], resolve)
+    //   }
+    // },
+    // {
+    //   path: '/admin/shop',
+    //   component: function(resolve){
+    //     require(['../view/admin/Shop.vue'], resolve)
+    //   }
+    // },
     {
     	path: '/shop',
     	component: Shop

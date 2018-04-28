@@ -1,10 +1,10 @@
 <template>
 	<div class="adminShop-wrap">
-		<div class="addShopBtn" @click="toShowAdd"><i class="el-icon-plus"></i><span>添加商家</span></div>
+		<div class="addShopBtn" @click="toShowAdd"><i class="el-icon-plus"></i><span>添加买家</span></div>
 		<div class="shopList-wrap">
-			<h5>商家信息</h5>
+			<h5>买家信息</h5>
 	    <el-table
-		    :data="shopInfo"
+		    :data="buyerInfo"
 		    border
 		    style="width: 100%">
 		    <el-table-column
@@ -14,7 +14,7 @@
 		    </el-table-column>
 		    <el-table-column
 		      prop="userName"
-		      label="店铺名称"
+		      label="买家昵称"
 		      min-width="3">
 		    </el-table-column>
 		    <el-table-column
@@ -28,17 +28,9 @@
 		      min-width="3">
 		    </el-table-column>
 		    <el-table-column
-		      prop="label"
-		      label="店铺标签"
-		      :filters="shopTagList"
-		      :filter-method="filterTag"
-		      filter-placement="bottom-end"
-		      min-width="3">
-		      <template slot-scope="scope">
-		        <el-tag
-		          :type="'success'"
-		          close-transition>{{scope.row.label}}</el-tag>
-		      </template>
+		      prop="address"
+		      label="邮寄地址"
+		      min-width="6">
 		    </el-table-column>
 		    <el-table-column label="操作" min-width="6">
 		      <template slot-scope="scope">
@@ -58,31 +50,24 @@
 		<el-dialog :title="dialogTitle" :visible.sync="dialogTableVisible" :show-close="false">
       <div class="dialogheader">
         <el-form label-position="right" label-width="80px">
-        	<el-form-item label="编号" v-show="dialogTitle=='查看商家'">
-            <el-input v-model="showItem.id" :disabled="dialogTitle=='查看商家'"></el-input>
+        	<el-form-item label="编号" v-show="dialogTitle=='查看买家'">
+            <el-input v-model="showItem.id" :disabled="dialogTitle=='查看买家'"></el-input>
           </el-form-item>
-          <el-form-item label="店铺名称">
-            <el-input v-model="showItem.userName" :disabled="dialogTitle=='查看商家'"></el-input>
+          <el-form-item label="买家昵称">
+            <el-input v-model="showItem.userName" :disabled="dialogTitle=='查看买家'"></el-input>
           </el-form-item>
           <el-form-item label="登陆账号">
-            <el-input v-model="showItem.name" :disabled="dialogTitle=='查看商家'"></el-input>
+            <el-input v-model="showItem.name" :disabled="dialogTitle=='查看买家'"></el-input>
           </el-form-item>
           <el-form-item label="登陆密码">
-            <el-input v-model="showItem.password" :disabled="dialogTitle=='查看商家'"></el-input>
+            <el-input v-model="showItem.password" :disabled="dialogTitle=='查看买家'"></el-input>
           </el-form-item>
-          <el-form-item label="店铺标签">
-            <el-select v-model="showItem.label" placeholder="请选择" :disabled="dialogTitle=='查看商家'">
-					    <el-option
-					      v-for="item in shopTagList"
-					      :key="item.id"
-					      :label="item.text"
-					      :value="item.value">
-					    </el-option>
-					  </el-select>
+          <el-form-item label="邮寄地址">
+            <el-input v-model="showItem.address" :disabled="dialogTitle=='查看买家'"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="toAdd" v-show="dialogTitle=='添加商家'">提交</el-button>
-            <el-button type="primary" @click="toEdit" v-show="dialogTitle=='编辑商家'">提交</el-button>
+            <el-button type="primary" @click="toAdd" v-show="dialogTitle=='添加买家'">提交</el-button>
+            <el-button type="primary" @click="toEdit" v-show="dialogTitle=='编辑买家'">提交</el-button>
             <el-button @click="toCancel">取消</el-button>
           </el-form-item>
         </el-form>
@@ -95,8 +80,7 @@
 	export default{
 		data(){
 			return{
-				shopInfo:[],
-				shopTagList:[],
+				buyerInfo:[],
 				dialogTableVisible:false,
 				dialogTitle:"",
 				showItem:{
@@ -104,29 +88,21 @@
 					userName:"",
 					name:"",
 					password:"",
-					label:""
+					address:""
 				}
 			}
 		},
 		mounted(){
 			this.getShopList();
-			this.getShopTagList();
 		},
 		methods:{
 			getShopList(){
 				this.axios.post(this.Api.getAccountList,{
-	        type:1
+	        type:2
 	      }).then((res)=>{
-	      	this.shopInfo=res.data;
+	      	this.buyerInfo=res.data;
 	      }).catch((err)=>{
 	        console.log("getShopList:"+err);
-	      });
-			},
-			getShopTagList(){
-				this.axios.post(this.Api.getTagtList,{}).then((res)=>{
-	      	this.shopTagList=res.data;
-	      }).catch((err)=>{
-	        console.log("getShopTagList:"+err);
 	      });
 			},
 			filterTag(value, row) {
@@ -134,25 +110,25 @@
       },
       toShowAdd(){
       	this.dialogTableVisible=true;
-      	this.dialogTitle="添加商家";
+      	this.dialogTitle="添加买家";
       },
       toShowEdit(obj){
       	this.dialogTableVisible=true;
-      	this.dialogTitle="编辑商家";
+      	this.dialogTitle="编辑买家";
       	this.showItem.id=obj.id;
       	this.showItem.userName=obj.userName;
       	this.showItem.name=obj.loginId;
       	this.showItem.password=obj.password;
-      	this.showItem.label=obj.label;
+      	this.showItem.address=obj.address;
       },
       toShowCheck(obj){
       	this.dialogTableVisible=true;
-      	this.dialogTitle="查看商家";
+      	this.dialogTitle="查看买家";
       	this.showItem.id=obj.id;
       	this.showItem.userName=obj.userName;
       	this.showItem.name=obj.loginId;
       	this.showItem.password=obj.password;
-      	this.showItem.label=obj.label;
+      	this.showItem.address=obj.address;
       },
       toCancel(){
       	this.dialogTableVisible=false;
@@ -162,23 +138,23 @@
 					userName:"",
 					name:"",
 					password:"",
-					label:""
+					address:""
 				}
       },
       toAdd(){
-      	if(this.showItem.name==""||this.showItem.password==""||this.showItem.userName==""||this.showItem.label==""){
+      	if(this.showItem.name==""||this.showItem.password==""||this.showItem.userName==""||this.showItem.address==""){
       		this.$message.error('请填写完整信息');
       		console.log(this.showItem)
         	return;
       	}
       	let param={
-      		type:1,
+      		type:2,
       		handle:"1",
       		mess:{
       			name:this.showItem.name,
       			password:this.showItem.password,
       			userName:this.showItem.userName,
-      			label:this.showItem.label,
+      			address:this.showItem.address,
       		}
       	}
       	this.axios.post(this.Api.adminHandle,param).then((res)=>{
@@ -196,20 +172,20 @@
 	      });
       },
       toEdit(){
-      	if(this.showItem.name==""||this.showItem.password==""||this.showItem.userName==""||this.showItem.label==""){
+      	if(this.showItem.name==""||this.showItem.password==""||this.showItem.userName==""||this.showItem.address==""){
       		this.$message.error('请填写完整信息');
       		console.log(this.showItem)
         	return;
       	}
       	let param={
-      		type:1,
+      		type:2,
       		handle:"2",
       		mess:{
       			id:this.showItem.id,
       			name:this.showItem.name,
       			password:this.showItem.password,
       			userName:this.showItem.userName,
-      			label:this.showItem.label,
+      			address:this.showItem.address,
       		}
       	}
       	this.axios.post(this.Api.adminHandle,param).then((res)=>{
@@ -227,13 +203,13 @@
 	      });
       },
       toDelete(id){
-      	this.$confirm("确定将该商家删除吗？", '提示', {
+      	this.$confirm("确定将该买家删除吗？", '提示', {
 	        confirmButtonText: '确定',
 	        cancelButtonText: '取消',
 	        type: 'warning'
 	      }).then(() => {
 	      	let param={
-	      		type:1,
+	      		type:2,
 	      		handle:"3",
 	      		mess:{
 	      			id:id,

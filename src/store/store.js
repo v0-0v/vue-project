@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    userMess:{"userName":"附近的拉布拉多","loginId":"admin1","password":"123"}//登陆者信息
+    userMess:{}//登陆者信息
 }
 
 const mutations = {
