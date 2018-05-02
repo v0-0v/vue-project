@@ -306,11 +306,10 @@ var accountInfo=[//账号列表
   			"produce":"定制，华丽，礼服，裙，个性，蓬蓬裙，性感",
   			"price":"￥923.5",
   			"exampleImg":[
-  				{name:'exampleImg61.jpg',url:'../../../static/images/shop/exampleImg61.jpg'},
-  				{name:'exampleImg62.jpg',url:'../../../static/images/shop/exampleImg62.jpg'},
-  				{name:'exampleImg63.jpg',url:'../../../static/images/shop/exampleImg63.jpg'},
-  				{name:'exampleImg64.jpg',url:'../../../static/images/shop/exampleImg64.jpg'},
-  				{name:'exampleImg65.jpg',url:'../../../static/images/shop/exampleImg65.jpg'},
+  				{name:'exampleImg71.jpg',url:'../../../static/images/shop/exampleImg71.jpg'},
+  				{name:'exampleImg72.jpg',url:'../../../static/images/shop/exampleImg72.jpg'},
+  				{name:'exampleImg73.jpg',url:'../../../static/images/shop/exampleImg73.jpg'},
+  				{name:'exampleImg74.jpg',url:'../../../static/images/shop/exampleImg74.jpg'},
   			],//示例图片路径
   			"tags":[//个性化元素列表
   				{
