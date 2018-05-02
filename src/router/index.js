@@ -63,6 +63,12 @@ export default new Router({
             require(['../view/shop/Good.vue'], resolve)
           }
         },
+        {
+          path:'addGood',
+          component: function(resolve){
+            require(['../view/shop/AddGood.vue'], resolve)
+          }
+        },
       ]
     },
     {

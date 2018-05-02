@@ -52,7 +52,15 @@
 					</div>
 	    	</div>
 	    </el-tab-pane>
-	    <el-tab-pane label="商品评价" name="goodEvaluate">配置管理</el-tab-pane>
+	    <el-tab-pane label="商品评价" name="goodEvaluate">
+	    	<ul class="comments-wrap">
+	    		<li v-for="comment in goodMess.commentsList">
+	    			<p>{{comment.text}}</p>
+	    			<span>{{comment.author}}</span>
+	    			<div></div>
+	    		</li>
+	    	</ul>
+	    </el-tab-pane>
 	  </el-tabs>
 	  <el-dialog :title="dialogTitle" :visible.sync="dialogTableVisible" :show-close="false">
       <div class="dialogheader">
@@ -216,6 +224,10 @@
 		      this.tagList[id].inputVisible = false;
         }else if(inputValue&&id==-1){
         	this.showItem.list.push(inputValue);
+        	this.showItem.inputVisible = false
+        }else if(inputValue==""&&id!=-1){
+        	this.tagList[id].inputVisible = false;
+        }else if(inputValue==""&&id==-1){
         	this.showItem.inputVisible = false;
         }
         this.inputValue = '';
@@ -316,6 +328,7 @@
 		display: block;
 		float: left;
 		width: 260px;
+		height: 260px;
 	}
 	.baseInfo-wrap div{
 		float: left;
@@ -392,6 +405,32 @@
     width: 90px;
     margin-left: 10px;
     vertical-align: bottom;
+  }
+  .comments-wrap{
+  	width: 100%;
+  }
+  .comments-wrap li{
+  	width: 100%;
+  	height: auto;
+  	border-bottom: 1px solid #eee;
+  }
+  .comments-wrap div{
+  	width: 100%;
+  	height: auto;
+  	clear: both;
+  }
+  .comments-wrap p{
+  	width: calc(100% - 200px);
+  	float: left;
+  	text-align: left;
+  	line-height: 30px;
+  	padding: 5px 0 5px 10px;
+  }
+  .comments-wrap span{
+  	display: block;
+  	width: 200px;
+  	float: left;
+  	line-height: 40px;
   }
 </style>
 

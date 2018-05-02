@@ -12,4 +12,5 @@ export default{
 	changeTags:api+"/changeTags",//商家个性化元素管理
 	changeGoodBasicMess:api+"/changeGoodBasicMess",//商家修改商品基本信息
 	addGoodTags:api+"/addGoodTags",//商家添加个性化元素分类
+	addGood:api+"/addGood",//商家上架商品
 }

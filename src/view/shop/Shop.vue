@@ -18,7 +18,7 @@
 			              <router-link to="/shop/goodList">已上架商品</router-link>
 			            </el-menu-item>
 			            <el-menu-item index="2-2">
-			              <router-link to="/shop/index">添加商品</router-link>
+			              <router-link to="/shop/addGood">添加商品</router-link>
 			            </el-menu-item>
 			          </el-menu-item-group>
 			        </el-submenu>
