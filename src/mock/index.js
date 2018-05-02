@@ -15,12 +15,37 @@ var accountInfo=[//账号列表
   			"title":"零食大礼包",
   			"produce":"超多零食，送女友，超大一箱，多种类自选，小吃组合，散装混合批发，超级划算，性价比高，良心推荐，加量不加价",
   			"price":"￥23.5",
-  			"exampleImg":"",//示例图片路径
+  			"exampleImg":[
+  				{name:'exampleImg11.jpg',url:'../../../static/images/shop/exampleImg11.jpg'},
+  				{name:'exampleImg12.jpg',url:'../../../static/images/shop/exampleImg12.jpg'},
+  				{name:'exampleImg13.jpg',url:'../../../static/images/shop/exampleImg13.jpg'},
+  				{name:'exampleImg14.jpg',url:'../../../static/images/shop/exampleImg14.jpg'},
+  			],//示例图片路径
   			"tags":[//个性化元素列表
   				{
-  					"type":"",
-  					"list":[""]
-  				}
+  					"id":0,
+  					"inputVisible":false,
+  					"type":"膨化食品类",
+  					"list":["虾条","薯片","鱿鱼酥","蔬菜圈","爆米花"]
+  				},
+  				{
+  					"id":1,
+  					"inputVisible":false,
+  					"type":"凉果蜜饯类",
+  					"list":["话梅","凉果","蜜饯","果脯","瓜果干","酸角糕"]
+  				},
+  				{
+  					"id":2,
+  					"inputVisible":false,
+  					"type":"肉干鱼干类",
+  					"list":["牛肉干","牛肉脯","猪肉粒","鱼片"]
+  				},
+  				{
+  					"id":3,
+  					"inputVisible":false,
+  					"type":"干果类",
+  					"list":["花生","瓜子","开心果","核桃仁","杏仁","榛子"]
+  				},
   			]
   		},
   	]
@@ -165,4 +190,76 @@ Mock.mock('http://www.Zhengy.com/api/getGoodMess',function(options){
 	})
 	var res = accountInfo[1][index1].goodList[index2];
 	return res;
+})
+//商家修改商品基本信息
+Mock.mock('http://www.Zhengy.com/api/changeGoodBasicMess',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index1 = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.shopId;
+	})
+	var index2 = accountInfo[1][index1].goodList.findIndex((value,index,arr)=>{
+		return value.id==req.goodId;
+	})
+	accountInfo[1][index1].goodList[index2].title=req.title;
+	accountInfo[1][index1].goodList[index2].produce=req.produce;
+	accountInfo[1][index1].goodList[index2].price=req.price;
+	code=200;
+	return {code:code};
+})
+//商家修改个性化案例展示图片
+Mock.mock('http://www.Zhengy.com/api/changeExampleImg',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index1 = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.shopId;
+	})
+	var index2 = accountInfo[1][index1].goodList.findIndex((value,index,arr)=>{
+		return value.id==req.goodId;
+	})
+	if(req.type==1){//增加
+		accountInfo[1][index1].goodList[index2].exampleImg.push(req.file);
+		code=200;
+	}else{//删除
+		var index3 = accountInfo[1][index1].goodList[index2].exampleImg.findIndex((value,index,arr)=>{
+			return value.name==req.name;
+		})
+		accountInfo[1][index1].goodList[index2].exampleImg.splice(index3,1);
+		code=200;
+	}
+	return {code:code,exampleImg:accountInfo[1][index1].goodList[index2].exampleImg};
+})
+//商家个性化元素管理
+Mock.mock('http://www.Zhengy.com/api/changeTags',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index1 = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.shopId;
+	})
+	var index2 = accountInfo[1][index1].goodList.findIndex((value,index,arr)=>{
+		return value.id==req.goodId;
+	})
+	accountInfo[1][index1].goodList[index2].tags[req.id].list=req.list;
+	code=200;
+	return {code:code};
+})
+//商家添加个性化元素分类
+Mock.mock('http://www.Zhengy.com/api/addGoodTags',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index1 = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.shopId;
+	})
+	var index2 = accountInfo[1][index1].goodList.findIndex((value,index,arr)=>{
+		return value.id==req.goodId;
+	})
+	var tag = {
+		"id":accountInfo[1][index1].goodList[index2].tags[accountInfo[1][index1].goodList[index2].tags.length-1].id+1,
+		"inputVisible":false,
+  	"type":req.type,
+  	"list":req.list
+	}
+	accountInfo[1][index1].goodList[index2].tags.push(tag);
+	code=200;
+	return {code:code,tag:tag}
 })
