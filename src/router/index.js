@@ -73,7 +73,45 @@ export default new Router({
     },
     {
     	path: '/buyer',
-    	component: Buyer
+    	component: Buyer,
+      children: [
+        {
+          path:'index',
+          component: function(resolve){
+            require(['../view/buyer/Index.vue'], resolve)
+          }
+        },
+        {
+          path:'goodList',
+          component: function(resolve){
+            require(['../view/buyer/GoodList.vue'], resolve)
+          }
+        },
+        {
+          path:'good',
+          component: function(resolve){
+            require(['../view/buyer/Good.vue'], resolve)
+          }
+        },
+        {
+          path:'toBuy',
+          component: function(resolve){
+            require(['../view/buyer/ToBuy.vue'], resolve)
+          }
+        },
+        {
+          path:'orderList',
+          component: function(resolve){
+            require(['../view/buyer/OrderList.vue'], resolve)
+          }
+        },
+        {
+          path:'order',
+          component: function(resolve){
+            require(['../view/buyer/Order.vue'], resolve)
+          }
+        },
+      ]
     },
   ]
 })

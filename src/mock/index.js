@@ -26,19 +26,19 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"材质",
-  					"list":["黄金","白银","彩金","水晶","珍珠"]
+  					"list":[{"name":"黄金","price":688},{"name":"白银","price":499},{"name":"彩金","price":378},{"name":"水晶","price":256},{"name":"珍珠","price":196}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"图形",
-  					"list":["比翼双飞","心心相印","长命百岁","合家欢乐","福运到","守护天使"]
+  					"list":[{"name":"比翼双飞","price":100},{"name":"心心相印","price":100},{"name":"长命百岁","price":100},{"name":"合家欢乐","price":100},{"name":"福运到","price":100},{"name":"守护天使","price":100}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"刻字",
-  					"list":["嘿，是我","小幸运","我是你爸爸","女神"]
+  					"list":[{"name":"嘿，是我","price":100},{"name":"小幸运","price":100},{"name":"我是你爸爸","price":100},{"name":"女神","price":100}]
   				},
   			],
   			"commentsList":[
@@ -74,19 +74,19 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"材质",
-  					"list":["黄金","白银","彩金","水晶","珍珠"]
+  					"list":[{"name":"黄金","price":688},{"name":"白银","price":499},{"name":"彩金","price":378},{"name":"水晶","price":256},{"name":"珍珠","price":196}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"图形",
-  					"list":["比翼双飞","心心相印","长命百岁","合家欢乐","福运到","守护天使"]
+  					"list":[{"name":"比翼双飞","price":100},{"name":"心心相印","price":100},{"name":"长命百岁","price":100},{"name":"合家欢乐","price":100},{"name":"福运到","price":100},{"name":"守护天使","price":100}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"刻字",
-  					"list":["嘿，是我","小幸运","我是你爸爸","女神"]
+  					"list":[{"name":"嘿，是我","price":100},{"name":"小幸运","price":100},{"name":"我是你爸爸","price":100},{"name":"女神","price":100}]
   				},
   			],
   			"commentsList":[
@@ -121,26 +121,22 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"材质",
-  					"list":["黄金","白银","彩金","水晶","珍珠"]
+  					"list":[{"name":"黄金","price":688},{"name":"白银","price":499},{"name":"彩金","price":378},{"name":"水晶","price":256},{"name":"珍珠","price":196}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"图形",
-  					"list":["比翼双飞","心心相印","长命百岁","合家欢乐","福运到","守护天使"]
+  					"list":[{"name":"比翼双飞","price":100},{"name":"心心相印","price":100},{"name":"长命百岁","price":100},{"name":"合家欢乐","price":100},{"name":"福运到","price":100},{"name":"守护天使","price":100}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"刻字",
-  					"list":["嘿，是我","小幸运","我是你爸爸","女神"]
+  					"list":[{"name":"嘿，是我","price":100},{"name":"小幸运","price":100},{"name":"我是你爸爸","price":100},{"name":"女神","price":100}]
   				},
   			],
   			"commentsList":[
-  				{
-  					"text":"特别美妹妹很喜欢",
-  					"author":"和牙刷私奔叻丶"
-  				},
   				{
   					"text":"不咋地啊",
   					"author":"夜凋凝"
@@ -168,26 +164,22 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"材质",
-  					"list":["黄金","白银","彩金","水晶","珍珠"]
+  					"list":[{"name":"黄金","price":688},{"name":"白银","price":499},{"name":"彩金","price":378},{"name":"水晶","price":256},{"name":"珍珠","price":196}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"图形",
-  					"list":["比翼双飞","心心相印","长命百岁","合家欢乐","福运到","守护天使"]
+  					"list":[{"name":"比翼双飞","price":100},{"name":"心心相印","price":100},{"name":"长命百岁","price":100},{"name":"合家欢乐","price":100},{"name":"福运到","price":100},{"name":"守护天使","price":100}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"刻字",
-  					"list":["嘿，是我","小幸运","我是你爸爸","女神"]
+  					"list":[{"name":"嘿，是我","price":100},{"name":"小幸运","price":100},{"name":"我是你爸爸","price":100},{"name":"女神","price":100}]
   				},
   			],
   			"commentsList":[
-  				{
-  					"text":"特别美妹妹很喜欢",
-  					"author":"和牙刷私奔叻丶"
-  				},
   				{
   					"text":"不咋地啊",
   					"author":"夜凋凝"
@@ -219,25 +211,25 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"膨化食品类",
-  					"list":["虾条","薯片","鱿鱼酥","蔬菜圈","爆米花"]
+  					"list":[{"name":"虾条","price":8},{"name":"薯片","price":8},{"name":"鱿鱼酥","price":12},{"name":"蔬菜圈","price":6},{"name":"爆米花","price":9}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"凉果蜜饯类",
-  					"list":["话梅","凉果","蜜饯","果脯","瓜果干","酸角糕"]
+  					"list":[{"name":"话梅","price":11},{"name":"凉果","price":8},{"name":"蜜饯","price":8},{"name":"果脯","price":10},{"name":"瓜果干","price":9},{"name":"酸角糕","price":8}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"肉干鱼干类",
-  					"list":["牛肉干","牛肉脯","猪肉粒","鱼片"]
+  					"list":[{"name":"牛肉干","price":19.9},{"name":"牛肉脯","price":18.5},{"name":"猪肉粒","price":16.2},{"name":"鱼片","price":12}]
   				},
   				{
   					"id":3,
   					"inputVisible":false,
   					"type":"干果类",
-  					"list":["花生","瓜子","开心果","核桃仁","杏仁","榛子"]
+  					"list":[{"name":"花生","price":8.8},{"name":"瓜子","price":8.8},{"name":"开心果","price":12},{"name":"核桃仁","price":18},{"name":"杏仁","price":11},{"name":"榛子","price":12}]
   				},
   			],
   			"commentsList":[
@@ -273,19 +265,19 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"材质",
-  					"list":["羊毛","石棉","锦纶","涤纶","晴纶"]
+  					"list":[{"name":"羊毛","price":300},{"name":"石棉","price":280},{"name":"锦纶","price":190},{"name":"涤纶","price":130},{"name":"晴纶","price":120}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"颜色",
-  					"list":["红色","黑色","白色","紫色","粉色","绿色"]
+  					"list":[{"name":"红色","price":100},{"name":"黑色","price":100},{"name":"白色","price":100},{"name":"紫色","price":100},{"name":"粉色","price":100},{"name":"绿色","price":100}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"风格",
-  					"list":["少女","尊贵","气质","时尚"]
+  					"list":[{"name":"少女","price":300},{"name":"尊贵","price":3500},{"name":"气质","price":280},{"name":"时尚","price":400}]
   				},
   			],
   			"commentsList":[
@@ -316,26 +308,22 @@ var accountInfo=[//账号列表
   					"id":0,
   					"inputVisible":false,
   					"type":"材质",
-  					"list":["羊毛","石棉","锦纶","涤纶","晴纶"]
+  					"list":[{"name":"羊毛","price":300},{"name":"石棉","price":280},{"name":"锦纶","price":190},{"name":"涤纶","price":130},{"name":"晴纶","price":120}]
   				},
   				{
   					"id":1,
   					"inputVisible":false,
   					"type":"颜色",
-  					"list":["红色","黑色","白色","紫色","粉色","绿色"]
+  					"list":[{"name":"红色","price":100},{"name":"黑色","price":100},{"name":"白色","price":100},{"name":"紫色","price":100},{"name":"粉色","price":100},{"name":"绿色","price":100}]
   				},
   				{
   					"id":2,
   					"inputVisible":false,
   					"type":"风格",
-  					"list":["少女","尊贵","气质","时尚"]
+  					"list":[{"name":"少女","price":300},{"name":"尊贵","price":3500},{"name":"气质","price":280},{"name":"时尚","price":400}]
   				},
   			],
   			"commentsList":[
-  				{
-  					"text":"质量不错",
-  					"author":"和牙刷私奔叻丶"
-  				},
   				{
   					"text":"不咋地",
   					"author":"夜凋凝"
@@ -346,9 +334,135 @@ var accountInfo=[//账号列表
   },
   ],
   [//买家账号
-  	{"name":"buyer1","password":"123","mess":{"id":1,"userName":"和牙刷私奔叻丶","loginId":"buyer1","password":"123","address":"黑龙江省大庆市"}},
-  	{"name":"buyer2","password":"123","mess":{"id":2,"userName":"夜凋凝","loginId":"buyer2","password":"123","address":"黑龙江省鹤岗市"}},
-  	{"name":"buyer3","password":"123","mess":{"id":3,"userName":"盛夏。","loginId":"buyer3","password":"123","address":"四川省南充市"}},
+  	{"name":"buyer1","password":"123","mess":{"id":1,"userName":"和牙刷私奔叻丶","loginId":"buyer1","password":"123","address":"黑龙江省大庆市"},
+  	"boughtList":[
+  		{
+  			"id":1,
+  			"shopId":1,
+  			"goodId":"1",
+  			"madeTags":[
+  				{
+  					"type":"材质",
+  					"item":{
+  						"name":"白银",
+  						"price":499
+  					}
+  				},
+  				{
+  					"type":"图形",
+  					"item":{
+  						"name":"合家欢乐",
+  						"price":100
+  					}
+  				},
+  				{
+  					"type":"刻字",
+  					"item":{
+  						"name":"嘿，是我",
+  						"price":100
+  					}
+  				},
+  			],
+  			"evaluate":"特别美妹妹很喜欢"
+  		},
+  		{
+  			"id":2,
+  			"shopId":1,
+  			"goodId":"2",
+  			"madeTags":[
+  				{
+  					"type":"材质",
+  					"item":{
+  						"name":"水晶",
+  						"price":256
+  					}
+  				},
+  				{
+  					"type":"图形",
+  					"item":{
+  						"name":"福运到",
+  						"price":100
+  					}
+  				},
+  				{
+  					"type":"刻字",
+  					"item":{
+  						"name":"小幸运",
+  						"price":100
+  					}
+  				},
+  			],
+  			"evaluate":"特别美妹妹很喜欢"
+  		},
+  		{
+  			"id":3,
+  			"shopId":2,
+  			"goodId":"1",
+  			"madeTags":[
+  				{
+  					"type":"膨化食品类",
+  					"item":{
+  						"name":"虾条",
+  						"price":8
+  					}
+  				},
+  				{
+  					"type":"凉果蜜饯类",
+  					"item":{
+  						"name":"凉果",
+  						"price":8
+  					}
+  				},
+  				{
+  					"type":"肉干鱼干类",
+  					"item":{
+  						"name":"牛肉脯",
+  						"price":18.5
+  					}
+  				},
+  				{
+  					"type":"干果类",
+  					"item":{
+  						"name":"杏仁",
+  						"price":11
+  					}
+  				},
+  			],
+  			"evaluate":"太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦太好吃啦"
+  		},
+  		{
+  			"id":4,
+  			"shopId":3,
+  			"goodId":"1",
+  			"madeTags":[
+  				{
+  					"type":"材质",
+  					"item":{
+  						"name":"棉纶",
+  						"price":190
+  					}
+  				},
+  				{
+  					"type":"颜色",
+  					"item":{
+  						"name":"黑色",
+  						"price":100
+  					}
+  				},
+  				{
+  					"type":"风格",
+  					"item":{
+  						"name":"气质",
+  						"price":280
+  					}
+  				},
+  			],
+  			"evaluate":"质量不错"
+  		},
+  	]
+  },
+  	{"name":"buyer2","password":"123","mess":{"id":2,"userName":"夜凋凝","loginId":"buyer2","password":"123","address":"黑龙江省鹤岗市"},},
+  	{"name":"buyer3","password":"123","mess":{"id":3,"userName":"盛夏。","loginId":"buyer3","password":"123","address":"四川省南充市"},},
   ],
 ];
 var shopTagList=[{id: 1, text: '饰品', value: '饰品' }, {id: 2, text: '食品', value: '食品' }, {id: 3, text: '服装', value: '服装' }]
@@ -465,10 +579,20 @@ Mock.mock('http://www.Zhengy.com/api/adminHandle',function(options){
 //商家获取已上架商品列表
 Mock.mock('http://www.Zhengy.com/api/getGoodList',function(options){
 	var req = eval('('+options.body+')');
-	var index = accountInfo[1].findIndex((value,index,arr)=>{
-		return value.mess.id==req.id;
-	})
-	var res = accountInfo[1][index].goodList;
+	if(req.type=='1'){
+		var res=[];
+		for(var i=0,length1=accountInfo[1].length;i<length1;i++){
+			for(var j=0,length2=accountInfo[1][i].goodList.length;j<length2;j++){
+				accountInfo[1][i].goodList[j].shopId=accountInfo[1][i].mess.id;
+				res.push(accountInfo[1][i].goodList[j]);
+			}
+		}
+	}else{
+		var index = accountInfo[1].findIndex((value,index,arr)=>{
+			return value.mess.id==req.id;
+		})
+		var res = accountInfo[1][index].goodList;
+	}
 	return res;
 })
 //商家获取某商品详细信息
@@ -571,4 +695,84 @@ Mock.mock('http://www.Zhengy.com/api/addGood',function(options){
 	accountInfo[1][index].goodList.push(good);
 	code=200;
 	return {code:code,goodlist:accountInfo[1][index].goodList}
+})
+
+//买家页面
+//买家支付成功
+Mock.mock('http://www.Zhengy.com/api/paySuccess',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index1 = accountInfo[2].findIndex((value,index,arr)=>{
+		return value.mess.id==req.buyerId;
+	})
+	if(accountInfo[2][index1].boughtList.length==0){
+		var id=1;
+	}else{
+		id=accountInfo[2][index1].boughtList[accountInfo[2][index1].boughtList.length-1].id+1;
+	}
+	let bought={
+		"id":id,
+		"shopId":req.shopId,
+		"goodId":req.goodId,
+		"madeTags":req.madeTags
+	}
+	accountInfo[2][index1].boughtList.push(bought);
+	code=200;
+	return {code:code,id:id}
+})
+//买家提交评价
+Mock.mock('http://www.Zhengy.com/api/submitEvaluation',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index1 = accountInfo[2].findIndex((value,index,arr)=>{
+		return value.mess.id==req.buyerId;
+	})
+	let comment={
+		"text":req.comment,
+		"author":accountInfo[2][index1].mess.userName,
+	}
+	var index2 = accountInfo[1].findIndex((value,index,arr)=>{
+		return value.mess.id==req.shopId;
+	})
+	var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
+		return value.id==req.goodId;
+	})
+	accountInfo[1][index2].goodList[index3].commentsList.push(comment);
+	var index4 = accountInfo[2][index1].boughtList.findIndex((value,index,arr)=>{
+		return value.id==req.id;
+	})
+	accountInfo[2][index1].boughtList[index4].evaluate=req.comment;
+	code=200;
+	return {code:code,buyer:accountInfo[2][index1].boughtList[index4],shop:accountInfo[1][index2].goodList[index3]}
+})
+//买家获取订单列表
+Mock.mock('http://www.Zhengy.com/api/getOrderList',function(options){
+	var req = eval('('+options.body+')');
+	var code=201;
+	var index = accountInfo[2].findIndex((value,index,arr)=>{
+		return value.mess.id==req.buyerId;
+	})
+	var res=[];
+	for(var i=0,length=accountInfo[2][index].boughtList.length;i<length;i++){
+		var list = accountInfo[2][index].boughtList[i];
+		var index2 = accountInfo[2].findIndex((value,index,arr)=>{
+			return value.mess.id==list.shopId;
+		})
+		var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
+			return value.id==list.goodId;
+		})
+		var item={
+			id:accountInfo[2][index].boughtList[i].id,
+			evaluate:accountInfo[2][index].boughtList[i].evaluate,
+			shopId:accountInfo[2][index].boughtList[i].shopId,
+			goodId:accountInfo[2][index].boughtList[i].goodId,
+			coverImg:accountInfo[1][index2].goodList[index3].coverImg,
+			title:accountInfo[1][index2].goodList[index3].title,
+			produce:accountInfo[1][index2].goodList[index3].produce,
+			price:accountInfo[1][index2].goodList[index3].price,
+		}
+		res.push(item);
+	}
+	code=200;
+	return {code:code,list:res}
 })

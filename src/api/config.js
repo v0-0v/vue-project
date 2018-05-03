@@ -13,4 +13,7 @@ export default{
 	changeGoodBasicMess:api+"/changeGoodBasicMess",//商家修改商品基本信息
 	addGoodTags:api+"/addGoodTags",//商家添加个性化元素分类
 	addGood:api+"/addGood",//商家上架商品
+	paySuccess:api+"/paySuccess",//买家支付成功
+	submitEvaluation:api+"/submitEvaluation",//买家提交评价
+	getOrderList:api+"/getOrderList",//买家获取订单列表
 }
