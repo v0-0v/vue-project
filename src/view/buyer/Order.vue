@@ -1,11 +1,11 @@
 <template>
 	<div class="toBuy-wrap">
 		<div class="baseInfo-wrap">
-			<img :src="$route.query.coverImg" />
+			<img :src="coverImg" />
 			<div>
-				<h5>{{$route.query.title}}</h5>
-				<p>{{$route.query.produce}}</p>
-				<span>{{$route.query.price}}</span>
+				<h5>{{title}}</h5>
+				<p>{{produce}}</p>
+				<span>{{price}}</span>
 			</div>
 		</div>
 		<div class="flow-wrap">
@@ -15,9 +15,12 @@
 			  <el-step title="订单完成"></el-step>
 			</el-steps>
 			<div class="flow-content orderCompletion">
-				<img src="../../assets/images/admin/complate.png" />
-				<p>订单已完成！可在“我的订单”中查看</p>
 				<el-button class="confrimBtn price" @click="toShow" v-show="active==2">立即评价</el-button>
+				<qrcode 
+				:value="value" 
+				:options="{ size: 170 }">
+				</qrcode>
+				<p>可扫描二维码，查看订单详情</p>
 			</div>
 		</div>
 		<el-dialog title="我的评价" :visible.sync="dialogTableVisible" :show-close="false">
@@ -37,24 +40,55 @@
 </template>
 
 <script>
+import QRcode from '@xkeshi/vue-qrcode'
 	export default{
 		data(){
 			return{
 				active: 0,
 				dialogTableVisible:false,
 				evaluate:"",
+				value: '',
+				coverImg:"",
+				title:"",
+				produce:"",
+				price:"",
+				madeTags:[],
 			}
+		},
+		components:{
+			qrcode:QRcode,
 		},
 		mounted(){
 			this.getGoodMess();
 		},
 		methods:{
 			getGoodMess(){
-				if(this.$route.query.evaluate==""){
-					this.active=2;
-				}else{
-					this.active=3;
-				}
+				this.axios.post(this.Api.getOrderMess,{buyerId:this.$store.state.userMess.id,id:this.$route.query.id}).then((res)=>{
+					console.log(res.data)
+	      	if(res.data.code==200){
+	      		this.coverImg=res.data.res.coverImg;
+	      		this.title=res.data.res.title;
+	      		this.produce=res.data.res.produce;
+	      		this.price=res.data.res.price;
+	      		this.evaluate=res.data.res.evaluate;
+	      		this.madeTags=res.data.res.madeTags;
+	      		if(this.evaluate==""){
+							this.active=2;
+						}else{
+							this.active=3;
+						}
+						//this.value="商品名称："+this.title+";";
+						let num=0;
+						for(var i=0,length=this.madeTags.length;i<length;i++){
+							// this.value+=this.madeTags[i].type+":"+this.madeTags[i].item.name+";"
+							// this.value+="价格:"+this.madeTags[i].item.price+"元;"
+							num+=this.madeTags[i].item.price
+						}
+						this.value+="price:"+num+";"
+	      	}
+	      }).catch((err)=>{
+	        console.log("getShopTagList:"+err);
+	      });
 			},
 			next() {
         if (this.active++ > 2) this.active = 0;
@@ -171,5 +205,12 @@
 <style>
 	.el-step__head{
 		text-align: left;
+	}
+	.el-step__head.is-success{
+		color: #3eb983;
+		border-color: #3eb983;
+	}
+	.el-step__title.is-success{
+		color: #3eb983;
 	}
 </style>

@@ -37,13 +37,6 @@
           path: '/buyer/order',
           query: {
             id: obj.id,
-            shopId: obj.shopId,
-            goodId: obj.goodId,
-            coverImg: obj.coverImg,
-            title: obj.title,
-            price: obj.price,
-            produce: obj.produce,
-            evaluate: obj.evaluate
           }
         })
 			}

@@ -341,4 +341,12 @@
     border-color: #bfcbd9;
     color: #fff;
   }
+
+  .el-step__head.is-success{
+		color: #3eb983;
+		border-color: #3eb983;
+	}
+	.el-step__title.is-success{
+		color: #3eb983;
+	}
 </style>

@@ -16,4 +16,5 @@ export default{
 	paySuccess:api+"/paySuccess",//买家支付成功
 	submitEvaluation:api+"/submitEvaluation",//买家提交评价
 	getOrderList:api+"/getOrderList",//买家获取订单列表
+	getOrderMess:api+"/getOrderMess",//买家获取订单详情
 }
