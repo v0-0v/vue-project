@@ -848,7 +848,8 @@ Mock.mock('http://www.Zhengy.com/api/adminHandle',function(options){
 						"loginId":req.mess.name,
 						"password":req.mess.password,
 						"label":req.mess.label,
-					}
+					},
+					"goodList":[]
 				};
 				accountInfo[1].push(shop);
 				code=200;
@@ -862,7 +863,8 @@ Mock.mock('http://www.Zhengy.com/api/adminHandle',function(options){
 						"loginId":req.mess.name,
 						"password":req.mess.password,
 						"address":req.mess.address,
-					}
+					},
+					"boughtList":[]
 				}
 				accountInfo[2].push(buyer);
 				code=200;
@@ -1086,23 +1088,25 @@ Mock.mock('http://www.Zhengy.com/api/getOrderList',function(options){
 	var res=[];
 	for(var i=0,length=accountInfo[2][index].boughtList.length;i<length;i++){
 		var list = accountInfo[2][index].boughtList[i];
-		var index2 = accountInfo[2].findIndex((value,index,arr)=>{
+		var index2 = accountInfo[1].findIndex((value,index,arr)=>{
 			return value.mess.id==list.shopId;
 		})
-		var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
-			return value.id==list.goodId;
-		})
-		var item={
-			id:accountInfo[2][index].boughtList[i].id,
-			evaluate:accountInfo[2][index].boughtList[i].evaluate,
-			shopId:accountInfo[2][index].boughtList[i].shopId,
-			goodId:accountInfo[2][index].boughtList[i].goodId,
-			coverImg:accountInfo[1][index2].goodList[index3].coverImg,
-			title:accountInfo[1][index2].goodList[index3].title,
-			produce:accountInfo[1][index2].goodList[index3].produce,
-			price:accountInfo[1][index2].goodList[index3].price,
+		if(index2!=-1){
+			var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
+				return value.id==list.goodId;
+			})
+			var item={
+				id:accountInfo[2][index].boughtList[i].id,
+				evaluate:accountInfo[2][index].boughtList[i].evaluate,
+				shopId:accountInfo[2][index].boughtList[i].shopId,
+				goodId:accountInfo[2][index].boughtList[i].goodId,
+				coverImg:accountInfo[1][index2].goodList[index3].coverImg,
+				title:accountInfo[1][index2].goodList[index3].title,
+				produce:accountInfo[1][index2].goodList[index3].produce,
+				price:accountInfo[1][index2].goodList[index3].price,
+			}
+			res.push(item);
 		}
-		res.push(item);
 	}
 	code=200;
 	return {code:code,list:res}
