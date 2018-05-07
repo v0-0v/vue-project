@@ -277,24 +277,24 @@
 		padding: 0;
 	}
 
-	.el-dialog{
+	.adminIndex-wrap .el-dialog{
     width: 500px;
     /*height: 280px;*/
     border-radius: 6px;
     text-align: left;
   }
-  .el-dialog__header{
+  .adminIndex-wrap .el-dialog__header{
     padding: 20px 30px 0 40px;
   }
-  .el-dialog__body{
+  .adminIndex-wrap .el-dialog__body{
     padding: 20px 30px;
   }
-  .dialogheader{
+  .adminIndex-wrap .dialogheader{
     width: 100%;
       /*height: 60px;*/
       
   }
-  .dialogheader p{
+  .adminIndex-wrap .dialogheader p{
     width: 360px;
     height: 30px;
     line-height: 30px;
@@ -305,42 +305,42 @@
     padding-left: 10px;
     margin-left: 60px; 
   }
-  .dialogheader p input{
+  .adminIndex-wrap .dialogheader p input{
   	height: 24px;
     line-height: 24px;
     border:0;
     margin-left: 20px;
   }
-  .dialogheader .button{
+  .adminIndex-wrap .dialogheader .button{
     background: #3eb983;
     color: #fff;
     text-align: center;
     margin-top: 40px;
     cursor: pointer;
   }
-  .dialogheader .el-button{
+  .adminIndex-wrap .dialogheader .el-button{
     width: 173px;
     padding: 10px 0;
   }
-  .dialogheader .el-form-item{
+  .adminIndex-wrap .dialogheader .el-form-item{
     margin-bottom: 15px;
   }
-  .dialogheader .el-button+.el-button{
+  .adminIndex-wrap .dialogheader .el-button+.el-button{
     margin-left: 0;
   }
-  .dialogheader .el-button--primary{
+  .adminIndex-wrap .dialogheader .el-button--primary{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--primary:hover{
+  .adminIndex-wrap .dialogheader .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--default{
+  .adminIndex-wrap .dialogheader .el-button--default{
     background-color: #bfcbd9;
     color: #fff;
   }
-  .dialogheader .el-button--default:hover{
+  .adminIndex-wrap .dialogheader .el-button--default:hover{
     background-color: #bfcbd9;
     border-color: #bfcbd9;
     color: #fff;

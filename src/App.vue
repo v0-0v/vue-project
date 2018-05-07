@@ -21,7 +21,7 @@ html,body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  min-width: 570px;
+  min-width: 1365px;
   margin: 0 auto;
   height: 100%;
   background-color: #eaebf0;

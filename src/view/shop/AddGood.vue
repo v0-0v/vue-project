@@ -300,7 +300,7 @@
 	}
 	.baseInfo-wrap{
 		width: 100%;
-		height: 360px;
+		height: auto;
 		margin-top: 20px;
 		background-color: #fff;
 		border-left: 6px solid #3eb983;
@@ -374,59 +374,59 @@
 </style>
 
 <style>
-	.el-form{
+	.addGood-wrap .el-form{
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
 		margin-top: 20px;
 	}
-	.el-form div{
+	.addGood-wrap .el-form div{
 		width: 400px;
 		padding-right: 80px;
 		box-sizing: content-box;
 	}
-	.el-upload-list{
+	.addGood-wrap .el-upload-list{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	.el-upload-list li{
+	.addGood-wrap .el-upload-list li{
 		width: 300px;
 	}
-	.el-upload {
+	.addGood-wrap .el-upload {
     width: 100%;
     text-align: left;
     padding-top: 10px;
 	}
-	.el-button--primary {
+	.addGood-wrap .el-button--primary {
     background-color: #3eb983;
     border-color: #3eb983;
 	}
-	.el-button--primary:hover{
+	.addGood-wrap .el-button--primary:hover{
 		background-color: #3eb983;
 		border-color: #3eb983;
 	}
 </style>
 
 <style>
-	.el-dialog{
+	.addGood-wrap .el-dialog{
     width: 500px;
     /*height: 280px;*/
     border-radius: 6px;
     text-align: left;
   }
-  .el-dialog__header{
+  .addGood-wrap .el-dialog__header{
     padding: 20px 30px 0 40px;
   }
-  .el-dialog__body{
+  .addGood-wrap .el-dialog__body{
     padding: 20px 30px;
   }
-  .dialogheader{
+  .addGood-wrap .dialogheader{
     width: 100%;
       /*height: 60px;*/
       
   }
-  .dialogheader p{
+  .addGood-wrap .dialogheader p{
     width: 360px;
     height: 30px;
     line-height: 30px;
@@ -437,47 +437,47 @@
     padding-left: 10px;
     margin-left: 60px; 
   }
-  .dialogheader p input{
+  .addGood-wrap .dialogheader p input{
   	height: 24px;
     line-height: 24px;
     border:0;
     margin-left: 20px;
   }
-  .dialogheader .button{
+  .addGood-wrap .dialogheader .button{
     background: #3eb983;
     color: #fff;
     text-align: center;
     margin-top: 40px;
     cursor: pointer;
   }
-  .dialogheader .el-button{
+  .addGood-wrap .dialogheader .el-button{
     width: 173px;
     padding: 10px 0;
   }
-  .dialogheader .el-form-item{
+  .addGood-wrap .dialogheader .el-form-item{
     margin-bottom: 15px;
   }
-  .dialogheader .el-button+.el-button{
+  .addGood-wrap .dialogheader .el-button+.el-button{
     margin-left: 0;
   }
-  .dialogheader .el-button--primary{
+  .addGood-wrap .dialogheader .el-button--primary{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--primary:hover{
+  .addGood-wrap .dialogheader .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--default{
+  .addGood-wrap .dialogheader .el-button--default{
     background-color: #bfcbd9;
     color: #fff;
   }
-  .dialogheader .el-button--default:hover{
+  .addGood-wrap .dialogheader .el-button--default:hover{
     background-color: #bfcbd9;
     border-color: #bfcbd9;
     color: #fff;
   }
-  .dialogheader .button-new-tag{
+  .addGood-wrap .dialogheader .button-new-tag{
   	width: auto;
   	background-color: #fff;
   	color: #606266;
@@ -488,7 +488,7 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  .dialogheader .button-new-tag:hover{
+  .addGood-wrap .dialogheader .button-new-tag:hover{
   	color: #409EFF;
   	background-color: rgba(64,158,255,.1);
   	border: 1px solid rgba(64,158,255,.2);

@@ -216,57 +216,57 @@
 </style>
 
 <style>
-	.el-tabs__item.is-active{
+	.good-wrap .el-tabs__item.is-active{
 		color: #3eb983;
 	}
-	.el-tabs__active-bar{
+	.good-wrap .el-tabs__active-bar{
 		background-color: #3eb983;
 	}
-	.el-tabs__header{
+	.good-wrap .el-tabs__header{
 		margin: 0;
 	}
-	.el-upload-list{
+	.good-wrap .el-upload-list{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	.el-upload-list li{
+	.good-wrap .el-upload-list li{
 		width: 300px;
 	}
-	.el-upload{
+	.good-wrap .el-upload{
 		width: 100%;
 		text-align: left;
 		padding-top: 10px;
 	}
-	.el-button--primary{
+	.good-wrap .el-button--primary{
 		background-color: #3eb983;
 		border-color: #3eb983;
 	}
-	.el-button--primary:hover{
+	.good-wrap .el-button--primary:hover{
 		background-color: #3eb983;
 		border-color: #3eb983;
 	}
 </style>
 
 <style>
-	.el-dialog{
+	.good-wrap .el-dialog{
     width: 500px;
     /*height: 280px;*/
     border-radius: 6px;
     text-align: left;
   }
-  .el-dialog__header{
+  .good-wrap .el-dialog__header{
     padding: 20px 30px 0 40px;
   }
-  .el-dialog__body{
+  .good-wrap .el-dialog__body{
     padding: 20px 30px;
   }
-  .dialogheader{
+  .good-wrap .dialogheader{
     width: 100%;
       /*height: 60px;*/
       
   }
-  .dialogheader p{
+  .good-wrap .dialogheader p{
     width: 360px;
     height: 30px;
     line-height: 30px;
@@ -277,47 +277,47 @@
     padding-left: 10px;
     margin-left: 60px; 
   }
-  .dialogheader p input{
+  .good-wrap .dialogheader p input{
   	height: 24px;
     line-height: 24px;
     border:0;
     margin-left: 20px;
   }
-  .dialogheader .button{
+  .good-wrap .dialogheader .button{
     background: #3eb983;
     color: #fff;
     text-align: center;
     margin-top: 40px;
     cursor: pointer;
   }
-  .dialogheader .el-button{
+  .good-wrap .dialogheader .el-button{
     width: 173px;
     padding: 10px 0;
   }
-  .dialogheader .el-form-item{
+  .good-wrap .dialogheader .el-form-item{
     margin-bottom: 15px;
   }
-  .dialogheader .el-button+.el-button{
+  .good-wrap .dialogheader .el-button+.el-button{
     margin-left: 0;
   }
-  .dialogheader .el-button--primary{
+  .good-wrap .dialogheader .el-button--primary{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--primary:hover{
+  .good-wrap .dialogheader .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--default{
+  .good-wrap .dialogheader .el-button--default{
     background-color: #bfcbd9;
     color: #fff;
   }
-  .dialogheader .el-button--default:hover{
+  .good-wrap .dialogheader .el-button--default:hover{
     background-color: #bfcbd9;
     border-color: #bfcbd9;
     color: #fff;
   }
-  .dialogheader .button-new-tag{
+  .good-wrap .dialogheader .button-new-tag{
   	width: auto;
   	background-color: #fff;
   	color: #606266;
@@ -328,7 +328,7 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-  .dialogheader .button-new-tag:hover{
+  .good-wrap .dialogheader .button-new-tag:hover{
   	color: #409EFF;
   	background-color: rgba(64,158,255,.1);
   	border: 1px solid rgba(64,158,255,.2);

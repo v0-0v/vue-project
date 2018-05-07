@@ -75,81 +75,81 @@
 </style>
 
 <style>
-	.el-container{
+	.admin-wrap .el-container{
 		height: 100%;
 	}
-	.el-aside{
+	.admin-wrap .el-aside{
 		background-color: #1f2935;
 		text-align: left;
 	}
-	.el-main{
+	.admin-wrap .el-main{
 		padding: 0;
 	}
-	.el-menu{
+	.admin-wrap .el-menu{
 		height: 100%;
 	}
 </style>
 
 <style>
-	.iconfont{
+	.admin-wrap .iconfont{
     margin-right:10px;
   }
-  .el-menu-vertical-demo{
+  .admin-wrap .el-menu-vertical-demo{
     padding-left: 18px;
   }
-  .el-menu{
+  .admin-wrap .el-menu{
     background: #1f2935!important;
     border-right: 0;
   }
-  .el-menu img{
+  .admin-wrap .el-menu img{
   	width: 20px;
   	margin: 0 5px 0 2px;
   	vertical-align: middle;
   }
-  .el-menu-item a{
+  .admin-wrap .el-menu-item a{
     display: block;
     width: 100%;
     height: 100%;
     font-size: 14px;
     /*padding-left: 6px;*/
   }
-  .el-submenu a{
+  .admin-wrap .el-submenu a{
     padding-left: 6px;
   }
-  a.router-link-active a{
+  .admin-wrap a.router-link-active a{
     color:#3eb983!important; 
   }
-  .el-menu-item-group .is-active a{
+  .admin-wrap .el-menu-item-group .is-active a{
     color:#3eb983!important; 
   }
-  .el-menu-item-group li{
+  .admin-wrap .el-menu-item-group li{
     background:#1f2935;
     line-height: 48px;
     font-size:16px;
   }
-  .el-menu-item-group li i{
+  .admin-wrap .el-menu-item-group li i{
   	margin-right: 10px;
   }
-  .el-menu-item-group__title {
+  .admin-wrap .el-menu-item-group__title {
     padding-top: 0;
     color: #a2aebf;
   }
-  a{
+  .admin-wrap a{
     color: #a2aebf;
   }
-  .el-submenu .el-menu-item:hover, .el-submenu__title:hover{
+  .admin-wrap .el-submenu .el-menu-item:hover, .el-submenu__title:hover{
     background: #0f1722!important;
   }
-  .el-menu-item, .el-submenu__title{
+  .admin-wrap .el-menu-item, .el-submenu__title{
     color:#a2aebf; 
   }
-  .el-submenu__icon-arrow{
+  .admin-wrap .el-submenu__icon-arrow{
     right: 40px;
   }
-  .el-menu-vertical-demo{
+  .admin-wrap .el-menu-vertical-demo{
     padding-left: 0;
   }
-  .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item:hover, .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title:hover, .el-menu-item:hover{
+  .admin-wrap .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item:hover, .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title:hover, .el-menu-item:hover{
     background: #0f1722;
   }
 </style>

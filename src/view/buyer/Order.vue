@@ -205,14 +205,14 @@ import QRcode from '@xkeshi/vue-qrcode'
 </style>
 
 <style>
-	.el-step__head{
+	.toBuy-wrap .el-step__head{
 		text-align: left;
 	}
-	.el-step__head.is-success{
+	.toBuy-wrap .el-step__head.is-success{
 		color: #3eb983;
 		border-color: #3eb983;
 	}
-	.el-step__title.is-success{
+	.toBuy-wrap .el-step__title.is-success{
 		color: #3eb983;
 	}
 </style>

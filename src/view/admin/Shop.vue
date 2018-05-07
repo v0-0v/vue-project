@@ -347,41 +347,41 @@
 </style>
 
 <style>
-	.el-table thead{
+	.adminShop-wrap .el-table thead{
 		background-color: #bcf2db;
 		height: 32px;
 		line-height: 32px;
 		font-size: 12px;
 		text-align: center;
 	}
-	.el-table thead tr{
+	.adminShop-wrap .el-table thead tr{
 		background-color: #bcf2db;
 	}
-	.el-table th{
+	.adminShop-wrap .el-table th{
 		color: #17905c;
 		padding: 0;
 		background-color: #bcf2db;
 		text-align: center;
 	}
 
-	.el-dialog{
+	.adminShop-wrap .el-dialog{
     width: 500px;
     /*height: 280px;*/
     border-radius: 6px;
     text-align: left;
   }
-  .el-dialog__header{
+  .adminShop-wrap .el-dialog__header{
     padding: 20px 30px 0 40px;
   }
-  .el-dialog__body{
+  .adminShop-wrap .el-dialog__body{
     padding: 20px 30px;
   }
-  .dialogheader{
+  .adminShop-wrap .dialogheader{
     width: 100%;
       /*height: 60px;*/
       
   }
-  .dialogheader p{
+  .adminShop-wrap .dialogheader p{
     width: 360px;
     height: 30px;
     line-height: 30px;
@@ -392,112 +392,112 @@
     padding-left: 10px;
     margin-left: 60px; 
   }
-  .dialogheader p input{
+  .adminShop-wrap .dialogheader p input{
   	height: 24px;
     line-height: 24px;
     border:0;
     margin-left: 20px;
   }
-  .dialogheader .button{
+  .adminShop-wrap .dialogheader .button{
     background: #3eb983;
     color: #fff;
     text-align: center;
     margin-top: 40px;
     cursor: pointer;
   }
-  .dialogheader .el-button{
+  .adminShop-wrap .dialogheader .el-button{
     width: 173px;
     padding: 10px 0;
   }
-  .dialogheader .el-form-item{
+  .adminShop-wrap .dialogheader .el-form-item{
     margin-bottom: 15px;
   }
-  .dialogheader .el-button+.el-button{
+  .adminShop-wrap .dialogheader .el-button+.el-button{
     margin-left: 0;
   }
-  .dialogheader .el-button--primary{
+  .adminShop-wrap .dialogheader .el-button--primary{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--primary:hover{
+  .adminShop-wrap .dialogheader .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .dialogheader .el-button--default{
+  .adminShop-wrap .dialogheader .el-button--default{
     background-color: #bfcbd9;
     color: #fff;
   }
-  .dialogheader .el-button--default:hover{
+  .adminShop-wrap .dialogheader .el-button--default:hover{
     background-color: #bfcbd9;
     border-color: #bfcbd9;
     color: #fff;
   }
 
-  .el-message-box button{
+  .adminShop-wrap .el-message-box button{
     display: inline-block;
     float: right;
   }
-  .el-message-box .el-message-box__btns{
+  .adminShop-wrap .el-message-box .el-message-box__btns{
   	height: 61px;
   }
-  .el-message-box .el-message-box__btns button:nth-child(1){
+  .adminShop-wrap .el-message-box .el-message-box__btns button:nth-child(1){
     margin-left: 10px;
   }
-	.el-message-box .el-message-box__btns .el-button--default{
+	.adminShop-wrap .adminShop-wrap .el-message-box .el-message-box__btns .el-button--default{
     background-color: #bfcbd9;
     color: #fff;
   }
-  .el-message-box .el-message-box__btns .el-button--default:hover{
+  .adminShop-wrap .adminShop-wrap .el-message-box .el-message-box__btns .el-button--default:hover{
     background-color: #bfcbd9;
     border-color: #bfcbd9;
     color: #fff;
   }
-  .el-message-box .el-message-box__btns .el-button--primary{
+  .adminShop-wrap .adminShop-wrap .el-message-box .el-message-box__btns .el-button--primary{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .el-message-box .el-message-box__btns .el-button--primary:hover{
+  .adminShop-wrap .adminShop-wrap .el-message-box .el-message-box__btns .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
   }
 
-  .el-pagination{
+  .adminShop-wrap .adminShop-wrap .el-pagination{
   	font-weight: normal;
   	padding-right: 0;
   }
-  .el-pagination button{
+  .adminShop-wrap .adminShop-wrap .el-pagination button{
   	padding: 0 6px;
   	min-width: 28px;
   }
-  .el-pagination .btn-next, .el-pagination .btn-prev{
+  .adminShop-wrap .el-pagination .btn-next, .el-pagination .btn-prev{
   	border: 1px solid #d1dbe5;
   }
-  .el-pagination .btn-prev{
+  .adminShop-wrap .el-pagination .btn-prev{
   	padding-right: 6px;
   	border-right: 0;
   	border-radius: 2px 0 0 2px;
   }
-  .el-pagination .btn-next{
+  .adminShop-wrap .el-pagination .btn-next{
   	border-left: 0;
   	padding-left: 6px;
   	border-radius: 0 2px 2px 0;
   }
-  .el-pager li{
+  .adminShop-wrap .el-pager li{
   	border: 1px solid #d1dbe5;
   	border-right: 0;
   	min-width: 28px;
   }
-  .el-pager li.active{
+  .adminShop-wrap .el-pager li.active{
   	color: #fff;
   }
-  .pageblock .el-pager li.active{
+  .adminShop-wrap .pageblock .el-pager li.active{
   	border-color: #3eb983;
   	background-color: #3eb983;
   }
-  .el-pager li.active+li{
+  .adminShop-wrap .el-pager li.active+li{
   	border-left: 0;
   }
-  .el-pager li:last-child{
+  .adminShop-wrap .el-pager li:last-child{
   	border-right: 1px solid #d1dbe5;
   }
 </style>
