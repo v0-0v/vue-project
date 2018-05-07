@@ -72,6 +72,7 @@ import QRcode from '@xkeshi/vue-qrcode'
 	      		this.price=res.data.res.price;
 	      		this.evaluate=res.data.res.evaluate;
 	      		this.madeTags=res.data.res.madeTags;
+	      		console.log(this.evaluate)
 	      		if(this.evaluate==""){
 							this.active=2;
 						}else{
@@ -186,7 +187,8 @@ import QRcode from '@xkeshi/vue-qrcode'
 		padding: 10px 40px;
 	}
 	.price{
-		margin-top: 20px;
+		display: block;
+		margin: 20px auto;
 	}
 
 	.orderCompletion{

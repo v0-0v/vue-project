@@ -47,23 +47,30 @@
 				<h6>{{item.type}}</h6>
 				<div>
 					<el-tag
-					  v-for="tag in item.list"
-					  :key="tag"
-					  closable
-					  :disable-transitions="false"
-					  @close="handleClose(tag,item.id)">
-					  {{tag}}
-					</el-tag>
+            v-for="(tag,index) in item.list"
+            :key="index"
+            closable
+            :disable-transitions="false"
+            @close="handleClose(tag,item.id)">
+            {{tag.name}}
+          </el-tag>
 					<el-input
-					  class="input-new-tag"
-					  v-if="item.inputVisible"
-					  v-model="inputValue"
-					  :ref="item.type"
-					  size="small"
-					  @keyup.enter.native="handleInputConfirm(item.id)"
-					  @blur="handleInputConfirm(item.id)"
-					>
-					</el-input>
+            class="input-new-tag"
+            v-if="item.inputVisible"
+            v-model="inputValue1"
+            :ref="item.type"
+            size="small"
+            placeholder="标签名称"
+          ></el-input>
+          <el-input
+            class="input-new-tag"
+            v-if="item.inputVisible"
+            v-model="inputValue2"
+            :ref="item.type"
+            size="small"
+            placeholder="标签价格"
+          ></el-input>
+          <el-button v-if="item.inputVisible" class="button-new-tag" @click="handleInputConfirm(item.id)">确定</el-button>
 					<el-button v-else class="button-new-tag" @click="showInput(item.id,item.type)">+ 添加新元素</el-button>
 				</div>
 			</div>
@@ -77,23 +84,32 @@
           </el-form-item>
           <el-form-item label="元素标签">
             <el-tag
-						  v-for="tag in showItem.list"
-						  :key="tag"
-						  closable
-						  :disable-transitions="false"
-						  @close="handleClose(tag,-1)">
-						  {{tag}}
-						</el-tag>
-						<el-input
-						  class="input-new-tag"
-						  v-if="showItem.inputVisible"
-						  v-model="inputValue"
-						  ref="saveTagInput"
-						  size="small"
-						  @keyup.enter.native="handleInputConfirm(-1)"
-						  @blur="handleInputConfirm(-1)"
-						>
-						</el-input>
+              v-for="(tag,index) in showItem.list"
+              :key="index"
+              closable
+              :disable-transitions="false"
+              @close="handleClose(tag,-1)">
+              {{tag.name}}
+            </el-tag>
+            <el-input
+              class="input-new-tag"
+              v-if="showItem.inputVisible"
+              v-model="inputValue1"
+              ref="saveTagInput"
+              size="small"
+              placeholder="标签名称"
+            >
+            </el-input>
+            <el-input
+              class="input-new-tag"
+              v-if="showItem.inputVisible"
+              v-model="inputValue2"
+              ref="saveTagInput"
+              size="small"
+              placeholder="标签价格"
+            >
+            </el-input>
+            <el-button v-if="showItem.inputVisible" class="button-new-tag" @click="handleInputConfirm(-1)">确定</el-button>
 						<el-button v-else class="button-new-tag" size="small" @click="showInput(-1,showItem.type)">+ 添加新元素</el-button>
           </el-form-item>
           <el-form-item>
@@ -118,7 +134,8 @@
 				tags:[],
 				commentsList:[],
 				inputVisible: false,
-        inputValue: '',
+        inputValue1: '',
+        inputValue2: '',
         dialogTableVisible:false,
         showItem:{
         	type:"",
@@ -163,33 +180,56 @@
       	}
       },
       showInput(id,type) {
+        console.log(id)
       	if(id!=-1){
       		this.tags[id].inputVisible = true;
-      		this.$nextTick(_ => {
-      			this.$refs[type][0].$refs.input.focus();
-	        });
+      		// this.$nextTick(_ => {
+      		// 	this.$refs[type][0].$refs.input.focus();
+	       //  });
       	}else{
       		this.showItem.inputVisible = true;
-      		this.$nextTick(_ => {
-	        	this.$refs.saveTagInput.$refs.input.focus();
-	        });
+      		// this.$nextTick(_ => {
+	       //  	this.$refs.saveTagInput.$refs.input.focus();
+	       //  });
       	}
         
       },
       handleInputConfirm(id) {
-        let inputValue = this.inputValue;
-        if (inputValue&&id!=-1) {
-          this.tags[id].list.push(inputValue);
+        let inputValue1 = this.inputValue1;
+        let inputValue2 = this.inputValue2;
+        if (inputValue1&&inputValue2&&id!=-1) {
+          var tag={
+            name:inputValue1,
+            price:inputValue2
+          }
+          this.tags[id].list.push(tag);
+          // let param = {
+          //   shopId:this.$store.state.userMess.id,
+          //   goodId:this.$route.params.id.slice(1),
+          //   id:id,
+          //   list:this.tagList[id].list,
+          // }
+          // this.axios.post(this.Api.changeTags,param).then((res)=>{
+          //   console.log(res)
+          // }).catch((err)=>{
+          //   console.log("handleInputConfirm:"+err);
+          // });
           this.tags[id].inputVisible = false;
-        }else if(inputValue&&id==-1){
-        	this.showItem.list.push(inputValue);
-        	this.showItem.inputVisible = false;
-        }else if(inputValue==""&&id!=-1){
-        	this.tags[id].inputVisible = false;
-        }else if(inputValue==""&&id==-1){
-        	this.showItem.inputVisible = false;
+        }else if(inputValue1&&inputValue2&&id==-1){
+          var tag={
+            name:inputValue1,
+            price:inputValue2
+          }
+          this.showItem.list.push(tag);
+          this.showItem.inputVisible = false
+        }else if(id!=-1&&(inputValue1==""||inputValue2=="")){
+          this.tagList[id].inputVisible = false;
+        }else if(id==-1&&(inputValue1==""||inputValue2=="")){
+
+          this.showItem.inputVisible = false;
         }
-        this.inputValue = '';
+        this.inputValue1 = '';
+        this.inputValue2 = '';
       },
       toCancel(){
       	this.dialogTableVisible=false;

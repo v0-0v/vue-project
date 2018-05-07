@@ -1047,7 +1047,8 @@ Mock.mock('http://www.Zhengy.com/api/paySuccess',function(options){
 		"id":id,
 		"shopId":req.shopId,
 		"goodId":req.goodId,
-		"madeTags":req.madeTags
+		"madeTags":req.madeTags,
+		"evaluate":""
 	}
 	accountInfo[2][index1].boughtList.push(bought);
 	code=200;
