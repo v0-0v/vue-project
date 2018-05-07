@@ -1065,12 +1065,27 @@ Mock.mock('http://www.Zhengy.com/api/submitEvaluation',function(options){
 		"text":req.comment,
 		"author":accountInfo[2][index1].mess.userName,
 	}
-	var index2 = accountInfo[1].findIndex((value,index,arr)=>{
-		return value.mess.id==req.shopId;
-	})
-	var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
-		return value.id==req.goodId;
-	})
+	if(req.shopId&&req.goodId){
+		var index2 = accountInfo[1].findIndex((value,index,arr)=>{
+			return value.mess.id==req.shopId;
+		})
+		var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
+			return value.id==req.goodId;
+		})
+	}else{
+		var index5 = accountInfo[2][index1].boughtList.findIndex((value,index,arr)=>{
+			return value.id==req.id;
+		})
+		var shopId = accountInfo[2][index1].boughtList[index5].shopId;
+		var goodId = accountInfo[2][index1].boughtList[index5].goodId;
+		var index2 = accountInfo[1].findIndex((value,index,arr)=>{
+			return value.mess.id==shopId;
+		})
+		var index3 = accountInfo[1][index2].goodList.findIndex((value,index,arr)=>{
+			return value.id==goodId;
+		})
+	}
+	
 	accountInfo[1][index2].goodList[index3].commentsList.push(comment);
 	var index4 = accountInfo[2][index1].boughtList.findIndex((value,index,arr)=>{
 		return value.id==req.id;
