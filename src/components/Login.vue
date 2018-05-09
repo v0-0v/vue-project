@@ -1,27 +1,29 @@
 <template>
   <div class="login-wrap">
     <h1>{{ msg }}</h1>
-    <h2>请先登陆您的身份</h2>
-    <div class="form-wrap">
-      <el-form ref="form" :model="form" label-width="80px" :label-position="labelPosition">
-        <el-form-item label="角色" prop="radio">
-          <el-radio-group v-model="form.radio" v-on:change="judegAccount">
-            <el-radio label="0" border>管理员</el-radio>
-            <el-radio label="1" border>商家</el-radio>
-            <el-radio label="2" border>买家</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="用户名" prop="name">
-          <el-input v-model="form.name" v-on:blur="judegAccount" clearable></el-input>
-        </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="form.password" type="password" clearable></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" v-on:click="submitForm">登陆</el-button>
-          <el-button v-on:click="resetForm('form')">重置</el-button>
-        </el-form-item>
-      </el-form>
+    <div class="login-content">
+      <h2>请先登陆您的身份</h2>
+      <div class="form-wrap">
+        <el-form ref="form" :model="form" label-width="80px" :label-position="labelPosition">
+          <el-form-item label="角色" prop="radio">
+            <el-radio-group v-model="form.radio" v-on:change="judegAccount">
+              <el-radio label="0" border>管理员</el-radio>
+              <el-radio label="1" border>商家</el-radio>
+              <el-radio label="2" border>买家</el-radio>
+            </el-radio-group>
+          </el-form-item>
+          <el-form-item label="用户名" prop="name">
+            <el-input v-model="form.name" v-on:blur="judegAccount" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="密码" prop="password">
+            <el-input v-model="form.password" type="password" clearable></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" v-on:click="submitForm">登陆</el-button>
+            <el-button v-on:click="resetForm('form')">重置</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
     </div>
   </div>
 </template>
@@ -105,7 +107,15 @@ export default {
 .login-wrap{
   width: 100%;
   height: 100%;
+  padding-top: 40px;
+  background-color: #3eb983;
+}
+.login-content{
+  width: 366px;
+  height: auto;
+  margin: 0 auto; 
   background-color: #fff;
+  border: 20px solid #bcf2db;
 }
 h1, h2 {
   font-weight: normal;
@@ -113,11 +123,13 @@ h1, h2 {
 }
 h1{
   font-size: 30px;
-  margin: 40px auto 20px;
+  margin: 0 auto 20px;
+  color: #fff;
 }
 h2{
   font-size: 22px;
-  margin-bottom: 20px;
+  line-height: 70px;
+  border-bottom: 1px solid #bcf2db;
 }
 ul {
   list-style-type: none;
@@ -135,4 +147,33 @@ a {
   margin: 0 auto;
   text-align: left;
 }
+</style>
+
+<style>
+  .login-wrap .el-radio.is-bordered.is-checked{
+    border-color: #3eb983;
+  }
+  .login-wrap .el-radio__input.is-checked .el-radio__inner{
+    border-color: #3eb983;
+    background-color: #3eb983;
+  }
+  .login-wrap .el-radio__input .el-radio__inner:hover{
+    border-color: #3eb983;
+  }
+  .login-wrap .el-radio__input.is-checked+.el-radio__label{
+    color: #3eb983;
+  }
+  .login-wrap .el-button--primary{
+    background-color: #3eb983;
+    border-color: #3eb983;
+  }
+  .login-wrap .el-button--primary:hover{
+    background-color: #3eb983;
+    border-color: #3eb983;
+  }
+  .login-wrap .el-button--default:hover{
+    border-color: #3eb983;
+    background-color: #bcf2db;
+    color: #fff;
+  }
 </style>
