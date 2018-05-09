@@ -150,28 +150,28 @@ a {
 </style>
 
 <style>
-  .login-wrap .el-radio.is-bordered.is-checked{
+  .form-wrap .el-radio.is-bordered.is-checked{
     border-color: #3eb983;
   }
-  .login-wrap .el-radio__input.is-checked .el-radio__inner{
+  .form-wrap .el-radio__input.is-checked .el-radio__inner{
     border-color: #3eb983;
     background-color: #3eb983;
   }
-  .login-wrap .el-radio__input .el-radio__inner:hover{
+  .form-wrap .el-radio__input .el-radio__inner:hover{
     border-color: #3eb983;
   }
-  .login-wrap .el-radio__input.is-checked+.el-radio__label{
+  .form-wrap .el-radio__input.is-checked+.el-radio__label{
     color: #3eb983;
   }
-  .login-wrap .el-button--primary{
+  .form-wrap .el-button--primary{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .login-wrap .el-button--primary:hover{
+  .form-wrap .el-button--primary:hover{
     background-color: #3eb983;
     border-color: #3eb983;
   }
-  .login-wrap .el-button--default:hover{
+  .form-wrap .el-button--default:hover{
     border-color: #3eb983;
     background-color: #bcf2db;
     color: #fff;
